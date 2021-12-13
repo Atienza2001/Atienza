@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindanao</title>
+    <link rel="stylesheet" href="Design1.css">
+  </head>
+  <body>
+  
+  <header>
+<a href="#" class="brand">BIYAHEROS</a>
+<div class="navigation">
+<div class="navigation-items">
+  <a href="Index.html">HOME</a>
+  <a href="About.html">ABOUT</a>
+  <a href="Places.html">PLACES</a>
+  <a href="Gallery.html">GALLERY</a>
+  <a href="Contact.html">CONTACT</a>
+</div>
+</div>
+</header>
+  
+<div class="slider">
+      <div class="slide active">
+        <img src="Falls.jpg" alt=""> 
+        <div class="info">
+          <h2>Maria Cristina Falls</h2>
+          <p>One of the most beautiful waterfalls as told in Philippine history books is the Maria Cristina Falls, also called the Twin Falls. The 320-foot cascade is a sight to behold in Iligan, which is also known as the City of Majestic Waterfalls. According to the legend, Maria and Cristina are beautiful twin sisters who fell in love with the same man.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="Dinagat.jpg" alt="">
+        <div class="info">
+          <h2>Dinagat Island</h2>
+          <p>Another underrated yet must-visit place in the northeast of Mindanao is the Dinagat Islands. This emerging attraction in Surigao del Norte features secluded beaches, waterfalls, caves, and panoramic mountain views. One of the must-see spots you wouldn’t want to miss in Dinagat Islands is its mystical Lake Bababu. It is a meromictic lake, which contains both saltwater and freshwater.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="White.jpg" alt="">
+        <div class="info">
+          <h2>White Island (Camiguin)</h2>
+          <p>Emerged from the shifting tides off the coast of Mambajao, Camiguin is a powdery white sandbar known as White Island. It is also called the Naked Temptress due to its immaculate white sands and crystal clear blue waters. Although the sandbar is originally boomerang-shaped, it changes its form every year depending on the tides.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="Apo.jpg" alt="">
+        <div class="info">
+          <h2>Mount Apo</h2>
+          <p>Towering over Southern Mindanao, Mount Apo is the highest mountain in the Philippines located in the Durian Capital of the country, Davao. It rises over 2,956 MASL and covers the provinces of Davao del Sur and North Cotabato. </p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="Hinatuan.jpg" alt="">
+        <div class="info">
+          <h2>Enchanted River</h2>
+          <p>There is probably no other river in the country that will surpass the blueness of the famous Enchanted River, another mystic gem nestled in Hinatuan town in Surigao del Sur. It is 290 meters long, but its depth remains a mystery for many divers.</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+    </div>
+	
+	 <script type="text/javascript">
+    const slider = document.querySelector(".slider");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    const slides = document.querySelectorAll(".slide");
+    const slideIcons = document.querySelectorAll(".slide-icon");
+    const numberOfSlides = slides.length;
+    var slideNumber = 0;
+
+    //image slider next button
+    nextBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider previous button
+    prevBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber--;
+
+      if(slideNumber < 0){
+        slideNumber = numberOfSlides - 1;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider autoplay
+    var playSlider;
+
+    var repeater = () => {
+      playSlider = setInterval(function(){
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber++;
+
+        if(slideNumber > (numberOfSlides - 1)){
+          slideNumber = 0;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      }, 4000);
+    }
+    repeater();
+
+    //stop the image slider autoplay on mouseover
+    slider.addEventListener("mouseover", () => {
+      clearInterval(playSlider);
+    });
+
+    //start the image slider autoplay again on mouseout
+    slider.addEventListener("mouseout", () => {
+      repeater();
+    });
+    </script>
+  </body>
+</html>

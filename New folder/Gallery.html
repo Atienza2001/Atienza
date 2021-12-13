@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Website</title>
+  <link rel="stylesheet" href="Design.css">	  
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand">BIYAHEROS</a>
+  <div class="navigation">
+<div class="navigation-items">
+  <a href="Index.html">HOME</a>
+  <a href="About.html">ABOUT</a>
+  <a href="Places.html">PLACES</a>
+  <a href="Gallery.html">GALLERY</a>
+  <a href="Contact.html">CONTACT</a>
+ </div>
+ </div>
+ </header>
+ 
+	<div class="full-img" id="fullImgBox">
+		<img src="#" id="fullImg">
+		<span onclick="closeFullImg()">X</span>
+	</div>
+  <div class="img-gallery">
+	<img src="Batanes.jpg" onclick="closeFullImg(this.src)">
+	<img src="Boracay.jpg" onclick="closeFullImg()">
+	<img src="Sirao.jpg" onclick="closeFullImg()">
+	<img src="Bangui.jpg" onclick="closeFullImg()">
+	<img src="Bohol.jpg" onclick="closeFullImg()">
+	<img src="River.jpg" onclick="closeFullImg()">
+	<img src="Apo.jpg" onclick="closeFullImg()">
+	<img src="White.jpg" onclick="closeFullImg()">
+	<img src="Cebu.jpg" onclick="closeFullImg()">
+	<img src="Banaue.jpg" onclick="closeFullImg()">
+	<img src="Falls.jpg" onclick="closeFullImg()">
+	<img src="Dinagat.jpg" onclick="closeFullImg()">
+	<img src="Kawasan.jpg" onclick="closeFullImg()">
+	<img src="Hinatuan.jpg" onclick="closeFullImg()">
+	<img src="Baguio.jpg" onclick="closeFullImg()">
+  </div>
+  
+<script>
+	var fullImgBox = document.getElementaryID("fullImgBox");
+	var fullImgBox = document.getElementaryID("fullImgBox"); 
+	
+	function openFullImg(){
+	  fullImgBox.style.dislay = "flex";
+	  fullImg.src = pic;
+	}
+	
+	function closeFullImg(){
+	  fullImgBox.style.display = "none";
+	}
+</script>
+</body>
+</html>
